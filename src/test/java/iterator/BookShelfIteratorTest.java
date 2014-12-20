@@ -51,7 +51,7 @@ public class BookShelfIteratorTest {
     }
     
     @Test
-    public void nextで進めるた後のhasNextでfalseが返る() throws Exception {
+    public void nextで進めた後のhasNextでfalseが返る() throws Exception {
       // SetUp
       sut.next();
       // Verify
