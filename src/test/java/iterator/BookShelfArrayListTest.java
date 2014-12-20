@@ -12,9 +12,9 @@ import org.junit.runner.RunWith;
 public class BookShelfArrayListTest {
 
   public static class 初期状態の場合 {
-    
+
     BookShelfArrayList instance;
-    
+
     @Before
     public void setUp() {
       instance = new BookShelfArrayList(1);
@@ -25,11 +25,12 @@ public class BookShelfArrayListTest {
       // Verify
       assertThat(instance, is(notNullValue()));
     }
-    
+
     @Test
     public void iteratorメソッドでインスタンスが返る() throws Exception {
       // Exercise
-      BookShelfArrayListIterator actual = (BookShelfArrayListIterator)instance.iterator();
+      BookShelfArrayListIterator actual = (BookShelfArrayListIterator) instance
+          .iterator();
       // Verify
       assertThat(actual, instanceOf(BookShelfArrayListIterator.class));
     }
@@ -39,7 +40,7 @@ public class BookShelfArrayListTest {
   public static class 本を1冊追加した場合 {
 
     BookShelfArrayList sut;
-    Book book;
+    Book               book;
 
     @Before
     public void setUp() {
@@ -55,13 +56,23 @@ public class BookShelfArrayListTest {
       // Verify
       assertThat(actual.getName(), is("test"));
     }
-    
+
     @Test
     public void getLengthメソッドで1が返る() throws Exception {
       // Exercise
       int actual = sut.getLength();
       // Verify
       assertThat(actual, is(1));
+    }
+
+    @Test
+    public void さらに1冊本を追加できる() throws Exception {
+      // SetUp
+      Book book2 = new Book("test2");
+      // Exercise
+      sut.appendBook(book2);
+      // Verify
+      assertThat(book2.getName(), is("test2"));
     }
 
   }
