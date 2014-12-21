@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.Date;
 import java.util.Properties;
 
 public class FileProperties implements FileIO {
@@ -24,8 +23,7 @@ public class FileProperties implements FileIO {
   @Override
   public void writeToFile(String fileName) throws IOException {
     fos = new FileOutputStream(new File(fileName));
-    String header = "written by FileProperties\n";
-    header += new Date().toString();
+    String header = "written by FileProperties";
     props.store(fos, header);
     fos.close();
   }
