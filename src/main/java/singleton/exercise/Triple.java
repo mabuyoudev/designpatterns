@@ -5,15 +5,18 @@ import lombok.Getter;
 
 public class Triple {
 
-  @Getter
-  private int number;
+  private static Triple[] triple = new Triple[] { new Triple(0), new Triple(1),
+      new Triple(2),            };
 
-  private Triple(int number) {
-    this.number = number;
+  @Getter
+  int                     index;
+
+  private Triple(int index) {
+    this.index = index;
   }
 
-  public static Triple getInstance(int number) {
-    return new Triple(number);
+  public static Triple getInstance(int index) {
+    return triple[index];
   }
 
 }

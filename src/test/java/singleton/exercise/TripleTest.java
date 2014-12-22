@@ -12,7 +12,7 @@ public class TripleTest {
     // Exercise
     Triple sut = Triple.getInstance(1);
     // Verify
-    assertThat(sut.getNumber(), is(1));
+    assertThat(sut.getIndex(), is(1));
   }
 
 }
