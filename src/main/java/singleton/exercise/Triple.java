@@ -1,3 +1,4 @@
+// commit test
 package singleton.exercise;
 
 import lombok.Getter;
